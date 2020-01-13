@@ -1,0 +1,22 @@
+{
+  "name": "class-34-starter-code-todo",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-jsonschema-form": "1.8.0",
+    "react-router-dom": "5.0.1",
+    "react-scripts": "3.1.1",
+    "uuid": "3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,39 @@
+body, html {
+  height:100%;
+}
+
+body {
+  display:flex;
+  flex-direction:column;
+}
+main {
+  display:flex;
+  flex:1;
+  flex-direction:row;
+  justify-content:space-around;
+}
+
+section {
+  display:flex;
+  flex-direction:column;
+  width: 31%;
+  height:80%;
+  border:1px solid black;
+}
+
+.container {
+  background: #eee;
+  border:1px solid #eee;
+  flex:1;
+}
+
+.container.over {
+  background: #f5f5f5;
+  border:1px dashed;
+}
+
+.card {
+  border: 1px solid grey;
+  height: 100px;
+  margin: 1em;
+}

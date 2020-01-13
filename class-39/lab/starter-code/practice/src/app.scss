@@ -1,0 +1,29 @@
+.board {
+    display:flex;
+    flexDirection: row;
+    justifyContent: space-between;
+}
+
+.container {
+    border: 1px solid black;
+    display:flex;
+    flexDirection: column;
+    height:400px;
+    width: 30%;
+}
+
+.item {
+    border: 1px solid grey;
+    height: 100px;
+    width: 80%;
+    margin: auto;
+}
+
+.dragging {
+    opacity:.55;
+}
+
+.droppable {
+    border: 1px dashed blue;
+}
+

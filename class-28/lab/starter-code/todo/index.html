@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do App (Vanilla JS)</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="todo.css" />
+
+    <script id="header-template" type="text/x-handlebars-template">
+      <h2>There are {{count}} Items To Complete</h2>
+    </script>
+
+    <script id="item-template" type="text/x-handlebars-template">
+     <ul>
+        {{#each list}}
+        <li class="complete-{{complete}}">
+          <span id="{{id}}">
+            {{text}}
+          </span>
+          <button onClick=deleteItem({{id}})>delete</button>
+        </li>
+        {{/each}}
+      </ul>
+    </script>
+
+  </head>
+
+  <body>
+
+    <section class="todo">
+      <header id="header"></header>
+      <div>
+        <form method="post" id="todoForm">
+          <input id="item" placeholder="Add To Do List Item" />
+        </form>
+      </div>
+      <div id="items"></div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="todo.js"></script>
+  </body>
+
+</html>

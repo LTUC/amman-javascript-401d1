@@ -1,0 +1,49 @@
+.todo {
+
+    ul { 
+        list-style-type:none;
+        margin:0;
+        padding:0;
+
+        li {
+
+            align-items: center;
+            display:flex;
+            flex-direction:row;
+            margin: .75em .5em;
+
+            &.complete-true {
+              span {
+              background: pink;
+              text-decoration:line-through;
+                 &:hover {
+                    background: seagreen;
+                 }
+                }
+             }
+
+             span {
+                 background: #eee;
+                 border-radius: 4px;
+                 border: 1px solid #555;
+                 cursor:pointer;
+                 padding: .5em;
+
+                 &:hover {
+                     background: pink;
+                 }
+             }
+
+            button {
+                background: transparent;
+                border:none;
+                color:blue;
+                cursor:pointer;
+                padding:0;
+                margin: 0 .75em;
+            }
+
+        }
+    }
+
+}

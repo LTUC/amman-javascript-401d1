@@ -1,0 +1,1 @@
+{"title":"todo","type":"object","properties":{"text":{"type":"string"},"assignee":{"type":"string"},"due":{"type":"string","format":"date-time"},"difficulty":{"type":"number","default":3},"complete":{"type":"boolean","default":false},"_id":{"type":"string","pattern":"^[0-9a-fA-F]{24}$"},"__v":{"type":"number"}},"required":["text","assignee","due","difficulty","complete"]}

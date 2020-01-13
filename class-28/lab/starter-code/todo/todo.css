@@ -1,0 +1,47 @@
+.todo ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo ul li {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: .75em;
+  margin: .75em .5em;
+}
+
+.todo ul li.complete-true span {
+  background: pink;
+  text-decoration: line-through;
+}
+
+.todo ul li.complete-true span:hover {
+  background: seagreen;
+}
+
+.todo ul li span {
+  background: #e0e0e0;
+  cursor: pointer;
+}
+
+.todo ul li span:hover {
+  background: pink;
+}
+
+.todo ul li span, .todo ul li input {
+  border: .5px solid #eee;
+  display: inline-block;
+  padding: .2em .25em;
+  width: 300px;
+}
+
+.todo ul li button {
+  background: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 .75em;
+}

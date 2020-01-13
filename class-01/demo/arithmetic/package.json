@@ -1,0 +1,17 @@
+{
+  "name": "01-node-ecosystem",
+  "version": "0.0.1",
+  "description": "this will be sooooo cool",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "john@codefellows.com",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.6.1",
+    "jest": "^24.8.0"
+  }
+}

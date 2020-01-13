@@ -1,0 +1,81 @@
+.modal {
+
+    bottom:0;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:100;
+
+    &:after {
+
+        background:#000;
+        bottom:0;
+        content:' ';
+        left:0;
+        opacity:.5;
+        position:absolute;
+        right:0;
+        top:0;
+
+    }
+
+    > div {
+        background:#fff;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-sizing:border-box;
+        border-radius: 5px;
+        display:flex;
+        flex-direction:column;
+        height:65%;
+        margin:auto;
+        padding:0;
+        position:relative;
+        top:50%;
+        transform: translateY(-50%);
+        width:65%;
+        z-index:1000;
+
+        > header {
+            background: #ccc;
+            border-bottom: 0 none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+            display:flex;
+            font-size:1em;
+            font-weight:bold;
+            height:1.5em;
+            line-height:1.5em;
+            padding: .25em 1em;
+
+            span {
+                color:#000;
+                flex:1;
+            }
+
+            button {
+                background: inherit;
+                border: 0;
+                cursor:pointer;
+                order: 1;
+                text-align:center;
+
+                &:hover {
+                    background:#000;
+                    color:#fff;
+                }
+            }
+
+        }
+
+        > div {
+            flex:1;
+            overflow:auto;
+            padding:25px;
+        }
+
+
+    }
+
+}

@@ -1,0 +1,38 @@
+{
+  "name": "demo-context-api-1",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "react": "16.8.6",
+    "react-cookies": "0.1.1",
+    "react-dom": "16.8.6",
+    "react-jsonschema-form": "1.6.1",
+    "react-redux": "7.1.0",
+    "react-router-dom": "5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "4.0.1",
+    "superagent": "5.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

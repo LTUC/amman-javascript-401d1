@@ -1,0 +1,96 @@
+[
+  {
+    "title": "My Deck of Stuff",
+    "records": [
+      {
+        "title": "Content Record 1",
+        "copy": "Content Record 1 Copy Here...",
+        "media": {
+          "alt": "This is a picture",
+          "title": "This is the title of the picture",
+          "href": "https://placehold.it/200x100"
+        },
+        "links": [
+          {
+            "type": "primary",
+            "title": "Click Me",
+            "href": "https://www.foo.com"
+          },
+          {
+            "type": "secodary",
+            "title": "Not Me",
+            "href": "https://www.bar.com"
+          }
+        ]
+      },
+      {
+        "title": "Content Record 2",
+        "copy": "Content Record 2 Copy Here...",
+        "media": {
+          "alt": "This is a picture",
+          "title": "This is the title of the picture",
+          "href": "https://placehold.it/200x100"
+        },
+        "links": [
+          {
+            "type": "primary",
+            "title": "Click Me",
+            "href": "https://www.foo.com"
+          },
+          {
+            "type": "secodary",
+            "title": "Not Me",
+            "href": "https://www.bar.com"
+          }
+        ]
+      },
+      {
+        "title": "Content Record 3",
+        "copy": "Content Record 3 Copy Here...",
+        "media": {
+          "alt": "This is a picture",
+          "title": "This is the title of the picture",
+          "href": "https://placehold.it/200x100"
+        },
+        "links": [
+          {
+            "type": "primary",
+            "title": "Click Me",
+            "href": "https://www.foo.com"
+          },
+          {
+            "type": "secodary",
+            "title": "Not Me",
+            "href": "https://www.bar.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "My Other Deck of Stuff",
+    "records": [
+      {
+        "title": "Content Record 1",
+        "copy": "Content Record 1 Copy Here...",
+        "media": {
+          "alt": "This is a picture",
+          "title": "This is the title of the picture",
+          "href": "https://placehold.it/200x100"
+        },
+        "links": [
+          {
+            "type": "primary",
+            "title": "Click Me",
+            "href": "https://www.foo.com"
+          },
+          {
+            "type": "secodary",
+            "title": "Not Me",
+            "href": "https://www.bar.com"
+          }
+        ]
+      }
+    ]
+  }
+]

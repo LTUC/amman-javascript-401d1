@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drag 'n Drop Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js"></script>
+</head>
+<body>
+<main>
+  <section id="red">
+    <h2>Red</h2>
+    <div ondrop="handleDrop(event)" ondragover="dragOver(event)" class="container">
+      <div draggable="true" ondragstart="handleDrag(event)" class="card" id="item1">Item 1</div>
+      <div draggable="true" ondragstart="handleDrag(event)" class="card" id="item2">Item 2</div>
+    </div>
+  </section>
+  <section id="green">
+    <h2>Green</h2>
+    <div ondrop="handleDrop(event)" ondragover="dragOver(event)" class="container"></div>
+  </section>
+  <section id="blue">
+    <h2>Blue</h2>
+    <div ondrop="handleDrop(event)" ondragover="dragOver(event)" class="container"></div>
+  </section>
+
+
+
+</main>
+</body>
+</html>
+
