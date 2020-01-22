@@ -1,0 +1,18 @@
+{
+  "name": "food-model-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "collection.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --verbose --coverage --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "jest": "^25.1.0",
+    "uuid": "^3.4.0"
+  }
+}
