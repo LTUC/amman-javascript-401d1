@@ -3,15 +3,12 @@
 const schema = require('./food-schema.js');
 
 class Food {
-
-  constructor() {
-  }
-
+  constructor() {};
+  
   get(_id) {
     if (_id) {
       return schema.findOne({ _id });
-    }
-    else {
+    } else {
       return schema.find({});
     }
   }
@@ -28,7 +25,6 @@ class Food {
   delete(_id) {
     return schema.findByIdAndDelete(_id);
   }
-
 }
 
 module.exports = Food;
