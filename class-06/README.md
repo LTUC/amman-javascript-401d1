@@ -29,11 +29,3 @@ Using REST (Representational State Transfer) over HTTP allows us to easily (and 
 ## Resources
 
 - [json server](https://github.com/typicode/json-server)
-
-## Today's Outline
-
-<!-- To Be Completed By Instructor -->
-
-- Topic 1
-- Topic 2
-- ...
