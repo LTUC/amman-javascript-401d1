@@ -93,7 +93,7 @@ app.post('/api/v1/food',(req, res, next) => {
   let record = { name };
   record.id = db.length + 1;
   db.push(record);
-  res.json(record);
+  res.status(201).json(record);
 });
 
 app.put('/api/v1/food/:id', (req, res, next) => {
