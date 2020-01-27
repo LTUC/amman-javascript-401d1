@@ -1,12 +1,13 @@
 {
-  "name": "api-client",
+  "name": "simple-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "lint": "eslint **/*.js",
-    "test": "jest --coverage",
-    "test-watch": "jest --watchAll --coverage"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +15,9 @@
   "dependencies": {
     "eslint": "^6.8.0",
     "express": "^4.17.1",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "method-override": "^3.0.0",
+    "nodemon": "^2.0.2",
     "supertest": "^4.0.2"
   }
 }
