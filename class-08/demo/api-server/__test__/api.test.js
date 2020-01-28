@@ -4,31 +4,21 @@ const { server } = require('../lib/server.js');
 const supergoose = require('@code-fellows/supergoose');
 const mockRequest = supergoose(server);
 
-describe('Food API', () => {
-  it('can post() a new food', () => {
-    let obj = { name: 'apples', calories: 100, type: 'FRUIT' };
+describe('FOOD API', () => {
+  it('post a new food item', () => {
+    let testObj = { name: 'apple', calories: 25, type: 'FRUIT' };
     return mockRequest.post('/api/v1/food')
-      .send(obj)
+      .send(testObj)
       .then(data => {
+        console.log('***********', data.body);
         let record = data.body;
-        Object.keys(obj).forEach(key => {
-          expect(record[key]).toEqual(obj[key]);
+        Object.keys(testObj).forEach(key => {
+          expect(record[key]).toEqual(testObj[key]);
         });
-      });
+      })
   });
 
-  it('can get() a food', () => {
-    let obj = { name: 'oranges', calories: 100, type: 'FRUIT' };
-    return mockRequest.post('/api/v1/food')
-      .send(obj)
-      .then(data => {
-        return mockRequest.get(`/api/v1/food`)
-          .then(record => {
-            Object.keys(obj).forEach(key => {
-              expect(record.body[1][key]).toEqual(obj[key]);
-            });
-          });
-      });
-  });
+  // it('can get a food item', () => {
 
+  // });
 });

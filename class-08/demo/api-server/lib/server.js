@@ -1,31 +1,28 @@
 'use strict';
 
-// WOW. How clean is this server with all of the routes and middleware pulled out?
-
+// 3rd party dependencies
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
-// Import our Custom Routes
+// internal files
 const foodRoutes = require('../routes/food.js');
 
+// application constants
 const app = express();
 
-// Express built in middleware
-app.use(express.json());
-
-// 3rd Party middleware
-app.use(morgan('dev'));
+// 3rd party middleware
+app.use(express.json())
 app.use(cors());
+app.use(morgan('dev'));
 
-// Use our custom routes
-app.use('/api/v1/', foodRoutes);
+// 1st party middleware
+app.use('/api/v1', foodRoutes);
 
 module.exports = {
   server: app,
   start: port => {
-    let PORT = port || process.env.PORT || 8080;
-    app.listen(PORT, () => console.log(`Listening on ${PORT}`));
-  },
-};
-
+    let PORT = port || process.env.PORT || 2222;
+    app.listen(PORT, () => console.log(`server up: ${PORT}`));
+  }
+}
