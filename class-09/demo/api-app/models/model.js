@@ -1,7 +1,6 @@
 'use strict';
 
 class DataModel {
-
   constructor(schema) {
     this.schema = schema;
   }
@@ -9,17 +8,15 @@ class DataModel {
   get(id) {
     if (id) {
       return this.schema.findById(id);
-    }
-    else {
+    } else {
       return this.schema.find({});
     }
   }
 
   post(record) {
-    let newRecord = new this.schema(record);
-    return newRecord.save();
+    let item = new this.schema(record);
+    return item.save();
   }
-
 }
 
 module.exports = DataModel;
