@@ -31,13 +31,27 @@ router.post('/api/v1/:model', handlePost);
 router.get('/api/v1/:model/:id', handleGetOne)
 
 function handleGetAll(req, res, next) {
-
+  req.model.get()
+    .then(results => {
+      console.log('******** results: *********', results);
+      let count = results.length;
+      res.json({ count, results });
+    })
 }
 
 function handleGetOne(req, res, next) {
-
+  let id = req.params.id;
+  req.model.get(id)
+    .then(record => {
+      res.json(record)
+    }).catch(next);
 }
 
 function handlePost(req, res, next) {
-  
+  req.model.post(req.body)
+    .then(results => {
+      res.json(results);
+    }).catch(next);
 }
+
+module.exports = router;

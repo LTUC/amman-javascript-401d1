@@ -1,6 +1,6 @@
 'use strict';
 
-const schema = require('team-schema.js');
+const schema = require('./teams-schema.js');
 const dataModel = require('./model.js');
 
 class Teams extends dataModel {};

@@ -5,7 +5,7 @@ require('./players-schema.js');
 
 const teamsSchema = mongoose.Schema({
     name: { type: String, required: true }
-}, { toObject: { virtuals: true}, toJSON: { virtuals: true }});
+}, { toObject: { virtuals: true }, toJSON: { virtuals: true }});
 
 teamsSchema.virtual('actualPlayers', {
   ref: 'players',
@@ -22,4 +22,4 @@ teamsSchema.pre('findOne', function() {
   }
 });
 
-mongoose.model('teams', teamsSchema);
+module.exports = mongoose.model('teams', teamsSchema);
