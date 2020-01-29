@@ -18,11 +18,3 @@ In evaluating the database side of our server, one of the principle downsides to
 
 - Manage the lifecycle of data model instances with pre and post hooks
 - Use param middleware in express to create dynamic model routes
-
-## Today's Outline
-
-<!-- To Be Completed By Instructor -->
-
-- Topic 2
-- Topic 2
-- ...
