@@ -1,0 +1,14 @@
+{
+  "name": "stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stack.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
+}
