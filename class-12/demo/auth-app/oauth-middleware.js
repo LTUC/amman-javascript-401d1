@@ -3,66 +3,55 @@
 const superagent = require('superagent');
 const users = require('./users.js');
 
-/*
-  Resources
-  https://developer.github.com/apps/building-oauth-apps/
-*/
-
 const tokenServerUrl = 'https://github.com/login/oauth/access_token';
 const remoteAPI = 'https://api.github.com/user';
 const CLIENT_ID = '';
 const CLIENT_SECRET = '';
-const API_SERVER = 'http://localhost:3000/oauth';
+const API_SERVER = '';
 
 module.exports = async function authorize(req, res, next) {
-
   try {
     let code = req.query.code;
-    console.log('(1) CODE:', code);
+    console.log('my code:', code);
 
     let remoteToken = await exchangeCodeForToken(code);
-    console.log('(2) ACCESS TOKEN:', remoteToken)
+    console.log('remote token:', remoteToken);
 
     let remoteUser = await getRemoteUserInfo(remoteToken);
-    console.log('(3) GITHUB USER', remoteUser)
+    console.log('remote user:', remoteUser);
 
     let [user, token] = await getUser(remoteUser);
     req.user = user;
     req.token = token;
-    console.log('(4) LOCAL USER', user);
+
+    console.log('user', user);
 
     next();
-  } catch (e) { next(`ERROR: ${e.message}`) }
-
+  } catch(err) {
+    next(err);
+  }
 }
 
 async function exchangeCodeForToken(code) {
-
   let tokenResponse = await superagent.post(tokenServerUrl).send({
     code: code,
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
     redirect_uri: API_SERVER,
-    grant_type: 'authorization_code',
+    grant_type: 'authorization_code'
   })
 
   let access_token = tokenResponse.body.access_token;
-
   return access_token;
-
 }
 
 async function getRemoteUserInfo(token) {
-
-  let userResponse =
-    await superagent.get(remoteAPI)
-      .set('user-agent', 'express-app')
-      .set('Authorization', `token ${token}`)
+  let userResponse = await superagent.get(remoteAPI)
+    .set('user-agent', 'express-app')
+    .set('Authorization', `token ${token}`)
 
   let user = userResponse.body;
-
   return user;
-
 }
 
 async function getUser(remoteUser) {
@@ -75,5 +64,4 @@ async function getUser(remoteUser) {
   let token = users.generateToken(user);
 
   return [user, token];
-
 }

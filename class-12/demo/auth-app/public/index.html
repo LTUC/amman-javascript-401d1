@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Auth Test</title>
-</head>
-
-<body>
-  <main>
-
-    <a id="oauth" href="#">Login</a>
-
-  </main>
-
+  <head>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <h1>My Login Page:</h1>
+    <a id="oauth" href="#">Login to My App</a>
+  </body>
   <script>
-
-    let URL = "https://github.com/login/oauth/authorize";
+    let URL = 'https://github.com/login/oauth/authorize';
 
     let options = {
       client_id: '',
@@ -25,16 +19,15 @@
 
     let QueryString = Object.keys(options).map((key) => {
       return `${key}=` + encodeURIComponent(options[key]);
-    }).join("&");
+    }).join('&');
+
+    console.log('long form qs:', QueryString);
 
     let authURL = `${URL}?${QueryString}`;
 
+    console.log('the whole url:', authURL);
+    
     let link = document.getElementById('oauth');
     link.setAttribute('href', authURL);
-
   </script>
-
-
-</body>
-
 </html>
