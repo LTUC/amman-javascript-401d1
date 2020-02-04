@@ -5,8 +5,8 @@ const users = require('./users.js');
 
 const tokenServerUrl = 'https://github.com/login/oauth/access_token';
 const remoteAPI = 'https://api.github.com/user';
-const CLIENT_ID = '5a38062d7ba7ac4b7079';
-const CLIENT_SECRET = '303cdc9459fe9e6564f17562ac502c968c704996';
+const CLIENT_ID = '';
+const CLIENT_SECRET = '';
 const API_SERVER = 'http://localhost:3000/oauth';
 
 module.exports = async function authorize(req, res, next) {
