@@ -1,8 +1,8 @@
 {
-  "name": "class-17-server",
+  "name": "chat-client",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uuid": "^3.2.1"
+    "inquire": "^0.4.8",
+    "inquirer": "^7.0.4",
+    "uuid": "^3.4.0"
   }
 }
