@@ -1,95 +1,146 @@
-#  Socket.io - Message Queue Server
+# Mid-Term Projects
 
-## Learning Objectives
+## Core Requirements
 
-* Describe and Draw the architecture for a Message Queue server
-* Describe namespaces and rooms in Socket.io
+- Use any, all, most, or none of what you learned ...
+  - Make sure it works great
+  - Make sure it's covered in tests
+  - Make sure it has no UI -- this should be a back-end project only
+  - Your may build a back-end for your final project (upon instructor approval)
 
-## Outline
-* :05 **Housekeeping/Recap**
-* :30 **Whiteboard/DSA Review**
-* :15 **Lightning Talk**
-* Break
-* :30 **CS/UI Concepts** -
-* :20 **Code Review**
-* Break
-* :60 **Main Topic**
+Tools At Your Disposal
 
-## Computer Science Concept:
-* Namespaces and Clustering
+- Express Web Server with EJS
+- Express Custom API Server
+- Authentication, Authorization, RBAC
+- Remote APIs
+- SQL
+- Mongo
+- Socket.io
+- ... or teach yourself something totally new this week!
 
-## Message Queues
-A Queue server runs independently, and is tasked with routing events and messaging between clients.
+## Workflow
 
-- Any connected client can "publish" a message into the server.
-- Any connected client can "subscribe" to receive messages by type.
+- To manage Tasks ...
+  - Agile / Kanban Workflow
+  - Project Management System
+    - [Trello](https://trello.com/b/2GAur1IN/open-shelf-a-book-wiki?menu=filter&filter=label:Lab%2014)
+    - [Github Projects](https://help.github.com/articles/about-project-boards/)
+    - [Jira](https://www.atlassian.com/software/jira)
+    - [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards/)
 
-The Queue server has the ability to see which clients are connected,  to which Queues they are attached and further, to which events they are subscribed.  The Queue server is tasked with receiving any published message and then distributing it out to all connected and subscribed clients.
+- To Manage and Deploy Code
+  - SCM: Use the strict [Git Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+  - Deployment:
+    - Local dev/feature branches
+      - One Branch Per Feature
+    - Staging (Pre-Production) Branch
+    - Master (Production) Branch
+  - Developers work locally in feature branches
+  - Check-in and merge PRs against `stage`
+  - Deploy `stage` to a pre-production server (Heroku, AWS, or Azure)
+  - Once verified, PR stage against master and deploy to production server
+  - Protect master from direct check-ins
+  - Only Leads (TAs) can merge from Stage to Master
+  - Testing: Hook in GitHub Actions for live code testing
+  - Automation: Automate your deployment from Stage and Master to your service of choice.
 
-**What is a message?**
- - A message is a package of information, categorized by queue and event
- - `queue` - Which general bucket does this message belong
-   - i.e. "Database Events", "Filesystem Events", "Network Events", etc
- - `event` - What event has happened
-   - i.e. "delete, add, update, connection lost, error", etc.
- - `payload` - data associated with the event
-   - i.e. "record id, record information, error text", etc.
+## Development Schedule
 
- **Use Case**
- - An API server responds to a POST request
-   - User's access rights are confirmed
-   - The data is analyzed and normalized
-   - The data is sent to the database for saving
-   - The database "publishes" a message into the queue
-     - Queue: DB
-     - Event: CREATE
-     - Payload: JSON Object containing the created record
-   - The API server sends information back to it's client as normal
- - Elsewhere ...
-   - A logging application is connected to the queue
-     - It has subscribed to the "DB" Queue and is listening for `CREATE` events
-     - When the above transaction happens, the logger "hears" the `CREATE` event and logs some details to it's logging database and updates some summary data.
-   - A web based 'dashboard' application is running and is connected to the queue
-     - It also subscribes to `DB`/`CREATE`
-     - When this event happens, it updates a counter in the browser for the operator to see that a new record was created.
-   - A monitor application is running and is connected to the queue
-     - It also subscribes to `DB`/`CREATE`
-     - When this event happens, it sends a text to all sales people alerting them that a new customer account was created.
-   - ... and so on.
+### Class 19 (Project Planning)
 
+- Create your GitHub organization
+  - Back-End Repo
+  - Front-End Repo
+  - Other Repo's for supporting services
+- Deploy a simple "Hello World" server through your full pipeline
+  - Stage and Production of all servers
+  - Tests hooked up and passing
+- Get your project board setup with your initial stories
+  - At this stage, its's probably just stories to write more stories...
+- Get your Wiki setup for documentation
 
-## How do the `@nmq/q` client and server modules work?
+### Class 20 & 21 (Project Start)
 
-Within a socket.io server, by default, every socket that connects is in the same 'pool' of sockets. Everyone potentially hears every event.
+- Wireframes Complete
+- User workflows finalized
+- Initial design planned
+- Code
 
-While that may work well at a concert, applications typically seek to segment their users. As an example, in an event driven application, there can be made a case for a 'save' event being valid for both files and for database records.
+### Class 22 (Core MVP)
 
-But not every client needs to know about both. Loggers may only care about file changes, and a cache server may only care about databases.
+- First MVP should be completed by EOD
+- Your core functionality should be working end to end.
+  - Databases Hooked up and saving
+  - User workflow works (navigation, actions)
 
-What if there were 2 "pools" of events, called "files" and "db", respectively. And what if each pool could fire it's own "save" event?
+### Class 23 (Final MVP)
 
-In socket.io, we call those "pools" `Namespaces`
+- Adding Non-Breaking Features
+- Final "MVP" should be complete
+  - Whatever you have by EOD should be presentation ready
+  - Anything you add from this point on is purely additive.
 
-**Namespaces** can have their own uniquely named events or use common names, but only subscribers to a given namespace can 'hear' those events. As a client, you physically `connect()` to a namespace, which are presented as a route on the url
-  * Default/General Namespace: `localhost:3000`
-  * Codefellows Namespace: `localhost:3000/codefellows` 
+### Class 24
 
-**Rooms** are similar. Rather than connecting to a room directly as you do with a namespace, you first connect to a namespace and then request to the server that you `join` a room.  The accepted way to do this is by sending a join event to the server, and then the server will run the join command on behalf of the client.
+- Final Polish
+- Presentation Practice
 
-client.js
-```javascript
-const instructor = io.connect('http://localhost:3000/codefellows');
-instructor.emit('join','instructors', data => {
-  console.log(data);
-});
-```
+### Class 25 (Presentation Day)
 
-server.js
-```javascript
-  socket.on('join', (room, cb) => {
-    socket.join(room);
-    cb(`Joined ${room}`);
-  });
-```
+- Eat.
+- Drink.
+- Present.
+- Win.
 
-Unlike pure events, both **rooms** and **namespaces** allow you to inspect the list of clients attached. 
+## Presentations
+
+- Prepare a Powerpoint Style "deck" to present your project
+- Slide 1: Team Name and Logo
+- Slide 2: Summary of the project
+- One slide for each team member.
+  - Picture, 2-3 bullet points about you
+  - Introduce yourself, touch on your role in the team, and present your personal pitch.
+- Slide: Describe your problem domain in more bullet points
+- Slide: Sell your solution
+- Move to a stellar demo of the working application
+- Show Your Tests
+- Slide: Detail your workflow and process
+- Slide: Highlight your wins
+- Slide: Highlight areas for growth
+- Questions and Answers
+
+Why a deck? It's a helpful tool to keep you on time and on focus. Also, you will spend a lot of time in dev jobs speaking in front of a deck, so this is good practice for that. Know what's on screen behind you and prepare to speak in what appears to be an 'ad-hoc' fashion in front of it.
+
+[Sample Presentation Deck](https://docs.google.com/presentation/d/11EDUMYSNhM1EeeJVZ7Vl8ixSTCEWGVwlg-ca4oHF6aQ/edit?folder=0ALZOwD0N-ubCUk9PVA#slide=id.g75c0709359_1_61)
+
+## Tips and Tricks
+
+- Solve a real business or community problem
+- Deliver something desirable (make it rock!)
+- Don't over-complicate. Sometimes, the simplest solution can be the most scalable and stable. Favor stability and tightness over wizardry
+
+## Project Ideas
+
+- Re-Implement our authenticated API in an AWS Serverless Environment
+  - Or in Azure
+  - Or at Auth0
+- Create an installable, downloadable `npm` package of value to other developers
+  - Algorithms, OAuth, Queueing, etc.
+  - Middleware
+  - Helper Libraries or Utilities
+- Any sort of automation tool for a student, instructor, or the school
+  - Class Creator
+  - Assignment Linter
+- Github Tools
+- Implement OAuth from the other side (be a provider)
+- Text based games
+- Dev-Ops style automation (deployments, AWS configs, etc)
+- Dockerizations
+- AI or Machine Learning Utility
+- Anything you can think of with a Raspberry Pi
+  - Motion Detect
+  - Camera
+  - Environment
+  - API Fetching
+  - Automation

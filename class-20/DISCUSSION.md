@@ -15,4 +15,3 @@ Wiki Entry Ideas:
 ## Bookmark
 * [Azure Portal](https://portal.azure.com){:target="_blank"}
 * [AWS Console](https://aws.amazon.com/){:target="_blank"}
-

@@ -1,29 +1,11 @@
-# LAB: Cloud Server Deployment
+# Project Prep Assignments
 
-Deploy the full **Q Server** to both Azure and AWS, so that you gain some experience using these cloud technologies.
+Must be completed prior to the start of project week
 
-**Group Assignment** -- Work with your project team to complete this assignment.
+[Team Agreement](https://codefellows.github.io/common_curriculum/projects/Project_Prep_1)
 
-## Before you begin
-Refer to *Getting Started*  in the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for complete setup, configuration, deployment, and submission instructions.
+[Project Description](https://codefellows.github.io/common_curriculum/projects/Project_Prep_2)
 
+[Repository and Tooling](https://codefellows.github.io/common_curriculum/projects/Project_Prep_3)
 
-## Getting Started
-
-* Create an AWS Developer Account
-* Create an Azure Developer Account
-
-## Assignment
-  * Multi-Server Deployment
-    * API Server deployed and running at Heroku
-    * Queue Server deployed and running at AWS
-    * Logger Server deployed and running at Azure
-  * Testing / Verification
-    * Use Postman to POST, PUT, DELETE records in the API
-    * View logs on Azure Server
-      * The Q Server at AWS should broadcast the events
-      * The Logger server at Azure should respond to them
-
-
-## Assignment Submission Instructions
-Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations
+[Wireframes and Requirements](https://codefellows.github.io/common_curriculum/projects/Project_Prep_4)
