@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-
 import App from './components/app.js';
-
-import './styles.css';
 
 class Main extends React.Component {
   render() {
@@ -12,9 +9,9 @@ class Main extends React.Component {
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    );
+    )
   }
 }
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<Main />, rootElement);
+const root = document.getElementById('root');
+ReactDOM.render(<Main />, root);

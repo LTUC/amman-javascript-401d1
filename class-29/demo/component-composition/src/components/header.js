@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = props => {
   return (
@@ -10,12 +10,12 @@ const Header = props => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/stuff">Stuff</Link>
+            <NavLink to="/stuff">Stuff</NavLink>
           </li>
         </ul>
       </nav>
     </header>
-  );
-};
+  )
+}
 
 export default Header;
