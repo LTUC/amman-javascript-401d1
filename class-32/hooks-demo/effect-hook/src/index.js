@@ -4,9 +4,11 @@ import App from './app.js';
 
 function Main() {
   return (
-    <App />
-  );
+    <>
+      <App />
+    </>
+  )
 }
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<Main />, rootElement);
+const root = document.getElementById('root');
+ReactDOM.render(<Main />, root);
