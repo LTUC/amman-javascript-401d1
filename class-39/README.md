@@ -1,22 +1,24 @@
-# Combined Reducers, Drag and Drop
+# Redux - Additional Topics
+
+With the core concepts of Redux in place, we can turn our attention to alternate means of store management, and exploring how Redux can help us to add fidelity to our application process
 
 ## Learning Objectives
 
-* Describe and Define
-  * Multiple Reducers
-  * Duplicative Actions
-* Execute
-  * Splitting a complex reducer into multiples
-  * Implementing drag and drop via state and composition
-  
-## Outline
-* :05 **Housekeeping/Recap**
-* :30 **Whiteboard/DSA Review**
-* :15 **Lightning Talk**
-* Break
-* :30 **CS/UI Concepts** -
-* :20 **Code Review**
-* Break
-* :60 **Main Topic**
+### Students will be able to
 
+#### Describe and Define
 
+- Alternate Redux Store Managers
+  - Ducks
+  - Redux Toolkit
+- Other ways to manage state
+  - MobX
+
+#### Execute
+
+- A complete React/Redux Application
+- Migration of simple Redux to either Ducks or Toolkit
+
+## Today's Outline
+
+<!-- To Be Completed By Instructor -->
