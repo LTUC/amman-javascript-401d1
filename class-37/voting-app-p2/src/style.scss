@@ -1,0 +1,55 @@
+$error: red;
+$disabled: $error;
+
+$primary-color: #333;
+$secondary-color: #e3e3e3;
+
+$black: #111;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: helvetica;
+}
+
+body {
+  margin: 20px;
+
+  button {
+    margin-top: 10px;
+    background: $black;
+    color: $secondary-color;
+    padding: 4px 8px;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+  }
+}
+
+table {
+  border: solid 3px $black;
+  width: 50%;
+
+  thead {
+    padding: 10px;
+
+    th {
+      color: $error / 2;
+      text-align: left;
+      padding: 10px;
+    }
+  }
+
+  tr {
+    &:hover {
+      background: green;
+      color: $secondary-color;
+    }
+
+    &.disabled {
+      background: $error;
+      color: $secondary-color;
+    }
+  }
+}
