@@ -1,4 +1,4 @@
-# ![cf](http://i.imgur.com/7v5ASc8.png) Class 01: Intro to Python
+# ![cf](http://i.imgur.com/7v5ASc8.png) Class 42: Intro to Python
 
 ## Learning Objectives
 
