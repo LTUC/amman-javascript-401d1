@@ -9,7 +9,6 @@
 - Students will learn how to write scripts that can take user input and return conditional responses
 
 ## Outline
-## Outline
 - [Getting Python and PipEnv]
 - [Basic Python Review]
 - [Virtual Environments]
